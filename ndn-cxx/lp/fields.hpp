@@ -27,7 +27,7 @@
 #include "ndn-cxx/lp/cache-policy.hpp"
 #include "ndn-cxx/lp/nack-header.hpp"
 #include "ndn-cxx/lp/prefix-announcement-header.hpp"
-
+#include "ndn-cxx/lp/location-header.hpp"
 #include <boost/mpl/set.hpp>
 
 namespace ndn {
@@ -110,6 +110,11 @@ typedef FieldDecl<field_location_tags::Header,
 BOOST_CONCEPT_ASSERT((Field<PrefixAnnouncementField>));
 
 typedef FieldDecl<field_location_tags::Header,
+                  LocationHeader,
+                  tlv::Location> LocationField;
+BOOST_CONCEPT_ASSERT((Field<LocationField>));
+
+typedef FieldDecl<field_location_tags::Header,
                   uint64_t,
                   tlv::HopCountTag> HopCountTagField;
 BOOST_CONCEPT_ASSERT((Field<HopCountTagField>));
@@ -140,6 +145,7 @@ typedef boost::mpl::set<
   TxSequenceField,
   NonDiscoveryField,
   PrefixAnnouncementField,
+  LocationField,
   HopCountTagField
   > FieldSet;
 
