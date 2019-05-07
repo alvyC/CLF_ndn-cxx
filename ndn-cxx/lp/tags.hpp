@@ -25,6 +25,7 @@
 #include "ndn-cxx/lp/cache-policy.hpp"
 #include "ndn-cxx/lp/empty-value.hpp"
 #include "ndn-cxx/lp/prefix-announcement-header.hpp"
+#include "ndn-cxx/lp/location-header.hpp"
 #include "ndn-cxx/tag.hpp"
 
 namespace ndn {
@@ -71,6 +72,8 @@ typedef SimpleTag<EmptyValue, 14> NonDiscoveryTag;
  *  This tag can be attached to Data.
  */
 typedef SimpleTag<PrefixAnnouncementHeader, 15> PrefixAnnouncementTag;
+typedef SimpleTag<LocationHeader, 16> LocationTag;
+
 
 /** \class HopCountTag
  *  \brief a packet tag for HopCount field

@@ -39,12 +39,38 @@ public:
   };
 
   LocationHeader();
-
+  
+  explicit
   LocationHeader(const Block& block);
+
+  Location
+  getMyLocation() const {
+    return m_myLocation;
+  }
 
   void
   setMyLocation(Location ml) {
     m_myLocation = ml;
+  }
+  
+  Location
+  getPrevLocation() const {
+    return m_prevLocation;
+  }
+
+  void
+  setPrevLocation(Location pl) {
+    m_prevLocation = pl;
+  }
+  
+  Location
+  getDestLocation() const {
+    return m_destLocation;
+  }
+
+  void
+  setDestLocation(Location dl) {
+    m_destLocation = dl;
   }
 
   template<encoding::Tag TAG>
@@ -58,6 +84,8 @@ private:
   //todo: make  it optional
   //mutable optional<Location> m_myLocation;
   Location m_myLocation;
+  Location m_prevLocation;
+  Location m_destLocation;
 };
 
 NDN_CXX_DECLARE_WIRE_ENCODE_INSTANTIATIONS(LocationHeader);

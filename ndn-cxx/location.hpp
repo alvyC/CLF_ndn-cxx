@@ -35,7 +35,9 @@ namespace location {
     Double = 253,
     Longitude = 254,
     Latitude = 255,
-    MyLocation = 256
+    MyLocation = 256,
+    PrevLocation = 257,
+    DestLocation = 258
   };
 
   inline double
