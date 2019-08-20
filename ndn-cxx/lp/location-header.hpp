@@ -40,6 +40,8 @@ public:
 
   LocationHeader();
   
+  LocationHeader(Location ml, Location pl, Location dl);
+  
   explicit
   LocationHeader(const Block& block);
 

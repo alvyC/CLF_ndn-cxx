@@ -35,6 +35,13 @@ LocationHeader::LocationHeader(const Block& block)
   wireDecode(block);  
 }
 
+LocationHeader::LocationHeader(Location ml, Location pl, Location dl)
+  : m_myLocation(ml)
+  , m_prevLocation(pl)
+  , m_destLocation(dl)
+  {
+  } 
+
 template<encoding::Tag TAG>
 size_t
 LocationHeader::wireEncode(EncodingImpl<TAG>& encoder) const

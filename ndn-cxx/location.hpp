@@ -99,15 +99,25 @@ public:
   }
 
   void
-  setLaitude(const double lt) {
+  setLatitude(const double lt) {
     m_latitude = lt;
   }
+
+  // todo
+//  friend ostream & operator << (ostream &out, const Location &l); 
 
 //private:
   double m_longitude;
   double m_latitude;
 };
 
+/* todo
+ostream & operator << (ostream &out, const Location &c) 
+{ 
+    out << " (" << c.m_longitude << ", " << c.m_latitude << ") "; 
+    return out; 
+} 
+*/
 } // namespace ndn
 
 #endif // NDN_CXX_LOCATION_HPP
